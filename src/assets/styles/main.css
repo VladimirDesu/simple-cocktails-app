@@ -1,0 +1,46 @@
+@import './_base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-accent: 255 15 130;
+    --color-bg: 20 20 20;
+    --color-text: 255 255 255;
+    --color-text-muted: 211 211 211;
+  }
+}
+
+.title {
+  position: relative;
+  @apply font-medium uppercase text-center;
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  width: 100px;
+  height: 5px;
+  @apply bg-accent;
+}
+
+.description {
+  @apply tracking-widest text-center leading-9;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded;
+}
